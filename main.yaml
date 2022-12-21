@@ -1,0 +1,12 @@
+name: run action 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        env:
+          GH_TEST: ${{ secrets.GH_TEST }}
+        run: |
+          export GH_TEST="${GH_TEST}"
+          python test.py
