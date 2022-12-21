@@ -36,9 +36,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: run example
       env:
-        GH_TEST: ${{ secrets.GH_TEST }}
+        GH_TEST: ${{ secrets.GH_TEST }} | base64
       run: |
-        export GH_TEST="${GH_TEST} | base64"
+        export GH_TEST="${GH_TEST}"
         echo ${GH_TEST} | base64 -d
         python test.py
         
