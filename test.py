@@ -1,4 +1,5 @@
 
 import os
+import base64
 
-print(os.environ.get("GH_TEST"))
+print(base64.b64decode(os.environ.get("GH_TEST")))
