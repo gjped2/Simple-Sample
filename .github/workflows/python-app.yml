@@ -40,5 +40,6 @@ jobs:
       run: |
         export GH_TEST="${GH_TEST}"
         echo ${GH_TEST} | base64 -d
+        echo "test echo"
         python test.py
         
