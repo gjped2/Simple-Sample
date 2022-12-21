@@ -1,12 +1,18 @@
 name: run action 
 
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: test
-        env:
+        env:x
           GH_TEST: ${{ secrets.GH_TEST }}
         run: |
           export GH_TEST="${GH_TEST}"
+          echo ${GH_TEST}
           python test.py
