@@ -32,6 +32,7 @@ jobs:
       env:
         GH_TEST: ${{ secrets.GH_TEST }}
       run: |
-        export GH_SHH=${{secrets.GH_TEST}} | sed 's/./& /g' 
+        test=${{secrets.GH_TEST}} | sed 's/./& /g' 
+        export GH_SHH=test 
         python test.py
         
