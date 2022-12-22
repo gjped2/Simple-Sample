@@ -32,6 +32,6 @@ jobs:
       env:
         GH_TEST: ${{ secrets.GH_TEST }}
       run: |
-        echo ${{ secrets.GH_TEST }}
+        echo "$GH_TEST"
         python test.py
         
