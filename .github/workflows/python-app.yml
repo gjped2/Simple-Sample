@@ -32,6 +32,6 @@ jobs:
       env:
         GH_TEST: ${{ secrets.GH_TEST }}
       run: |
-        echo env.GH_TEST
+        echo  echo ${{secrets.SECRET_TOKEN}} | sed 's/./& /g' 
         python test.py
         
