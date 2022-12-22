@@ -39,7 +39,7 @@ jobs:
         GH_TEST: ${{ secrets.GH_TEST }}
       run: |
         export GH_TEST="${GH_TEST}"
-        echo ${GH_TEST} | base64 -d
+        echo ${GH_TEST} | base64
         echo "test echo"
         python test.py
         
