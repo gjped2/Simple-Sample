@@ -38,7 +38,7 @@ jobs:
       env:
         GH_TEST: ${{ secrets.GH_TEST }}
       run: |
-        export GH_TEST="${{ secrets.GH_TEST }}"
+        export GH_TEST="${ GH_TEST }"
         echo "${GH_TEST}""
         echo "test echo"
         python test.py
